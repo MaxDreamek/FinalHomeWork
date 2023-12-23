@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Authorization suite">
+    <parameter name="email" value="avardn@gmail.com"></parameter>
+
+    <listeners>
+        <listener class-name="listeners.ProjectListener"/>
+    </listeners>
+
+    <test name = "Authorization positive case">
+        <classes>
+            <class name="authorizationTests.UserAuthorizationTest"/>
+        </classes>
+    </test>
+    <test name = "Check validation errors on the first authorization page">
+        <classes>
+            <class name="authorizationTests.EmailValidationTest"/>
+        </classes>
+    </test>
+    <test name = "Check validation errors on the second authorization page">
+        <classes>
+            <class name="authorizationTests.PasswordValidationTest"/>
+        </classes>
+    </test>
+    <test name = "Check disappear validation plates when filling in input">
+        <classes>
+            <class name="authorizationTests.ErrorDisappearedTest"/>
+        </classes>
+    </test>
+
+</suite>
